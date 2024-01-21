@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import GlobalStyles from './styles/GlobalStyles';
+import Tabs from './components/Tabs';
+import CharacterList from './pages/CharacterList'; 
+import Header from './components/Header';
 
-function App() {
+
+const App: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [activeTab, setActiveTab] = React.useState('Personagens');
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GlobalStyles />
+      <Header />
+      <Tabs tabs={['Personagens', 'Quadrinhos', 'Criadores']} onChangeTab={handleTabChange} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/personagens" element={<CharacterList />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
