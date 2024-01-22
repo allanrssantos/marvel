@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Marvel App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
+O Marvel App é uma aplicação web que permite aos usuários explorar informações sobre personagens, quadrinhos e criadores do universo Marvel.
 
-## Available Scripts
+## Tecnologias Utilizadas
+- React
+- Styled Components
+- React Router DOM
+- Axios
+- Jest (para testes)
+- React Cookies
+- CryptoJS para criar o hash
 
-In the project directory, you can run:
+## Instalação
+1. **Clone este repositório:**
+    git clone https://github.com/allanrssantos/marvel.git
 
-### `npm start`
+2. **Acesse o diretório do projeto**
+    `cd marvel`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. **Instale as dependências**
+    `npm install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Executando a Aplicação
+1. **Inicie a aplicação**
+    `npm start`
 
-### `npm test`
+2. **Acesse a aplicação no navegador**
+    http://localhost:3000 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Teste
+1. **Execute os testes da aplicação**
+    `npm test`
 
-### `npm run build`
+## Estrutura do Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `/public`: Contém arquivos estáticos.
+- `/src`: Contém o código-fonte da aplicação.
+- `/components`: Contém os componentes da aplicação.
+- `/config`: Armazena configurações e arquivos de configuração da plicação.
+- `/hooks`: Contém hooks personalizados utilizados na aplicação.
+- `/pages`: Cada arquivo nesta pasta representa uma página da aplicação.
+- `/styles`: Armazena arquivos relacionados a estilos, como CSS ou arquivos de estilização.
+- `/utils`: Contém utilitários ou funções auxiliares utilizadas em diferentes partes da aplicação.
+- `/tests`: Contém os arquivos de testes.
