@@ -5,6 +5,8 @@ import GlobalStyles from './styles/GlobalStyles';
 import Tabs from './components/Tabs';
 import CharacterList from './pages/CharacterList'; 
 import Header from './components/Header';
+import ComicList from './pages/ComicList';
+import CreatorList from './pages/CreatorList';
 
 
 const App: React.FC = () => {
@@ -23,6 +25,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/personagens" element={<CharacterList />} />
+        <Route path="/quadrinhos" element={<ComicList />} />
+        <Route path="/criadores" element={<CreatorList />} />
       </Routes>
     </Router>
   );

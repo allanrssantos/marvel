@@ -1,33 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import CharacterCard from '../components/CharacterCard';
-import fetchCharacters from '../utils/fetchCharacters';
+import ComicCard from '../components/ComicCard';
+import fetchComics from '../utils/fetchComics';
 import useMarvelApiKeys from '../hooks/useMarvelApiKeys';
 
-interface Character {
+interface Comic {
   id: number;
-  name: string;
+  title: string;
   thumbnail: {
     path: string;
     extension: string;
   };
 }
 
-const CharacterList: React.FC = () => {
-  const [characters, setCharacters] = useState<Character[]>([]);
+const ComicList: React.FC = () => {
+  const [comics, setComics] = useState<Comic[]>([]);
   const [offset, setOffset] = useState(0);
   const { publicKey, privateKey } = useMarvelApiKeys();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const charactersData = await fetchCharacters(publicKey, privateKey, offset);
-        setCharacters((prevCharacters) => [...prevCharacters, ...charactersData]);
+        const comicsData = await fetchComics(publicKey, privateKey, offset);
+        setComics((prevComics) => [...prevComics, ...comicsData]);
       } catch (error) {
-        console.error('Erro ao buscar personagens:', error);
-      }
-    };
-
-    fetchData();
+        console.error('Erro ao buscar quadrinhos:', error);
+      } 
+    };   
+      fetchData();    
   }, [publicKey, privateKey, offset]);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const CharacterList: React.FC = () => {
       const pageHeight = document.documentElement.offsetHeight;
 
       if (scrollPosition > 0.8 * pageHeight) {
-        setOffset((prevOffset) => prevOffset + 20); 
+        setOffset((prevOffset) => prevOffset + 20);
       }
     };
 
@@ -45,17 +44,17 @@ const CharacterList: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [characters]);
+  }, []);
 
   return (
     <div style={{ textAlign: 'center' }}>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {characters.map((character) => (
-          <CharacterCard key={character.id} character={character} />
+        {comics.map((comic) => (
+          <ComicCard key={comic.id} comic={comic} />
         ))}
       </div>
     </div>
   );
 };
 
-export default CharacterList;
+export default ComicList;

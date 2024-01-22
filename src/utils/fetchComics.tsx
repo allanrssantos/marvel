@@ -9,19 +9,19 @@ const generateHash = (ts: string, privateKey: string, publicKey: string): string
   return CryptoJS.MD5(hashInput).toString();
 };
 
-const fetchCharacters = async (publicKey: string, privateKey: string, offset: number) => {
-    const timestamp = new Date().getTime().toString();
-    const hash = generateHash(timestamp, privateKey, publicKey);
-  
-    const url = `${BASE_URL}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&offset=${offset}`;
+const fetchComics = async (publicKey: string, privateKey: string, offset: number) => {
+  const timestamp = new Date().getTime().toString();
+  const hash = generateHash(timestamp, privateKey, publicKey);
+
+  const url = `${BASE_URL}/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&offset=${offset}`;
 
   try {
     const response = await axios.get(url);
     return response.data.data.results;
   } catch (error) {
-    console.error('Erro ao buscar personagens:', error);
+    console.error('Erro ao buscar quadrinhos:', error);
     return [];
   }
 };
 
-export default fetchCharacters;
+export default fetchComics;
