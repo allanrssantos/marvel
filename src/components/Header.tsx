@@ -31,10 +31,13 @@ const MenuButton = styled.div`
 
 const MenuItem = styled(Link)`
   color: #fff;
+  width: 100px;
   text-decoration: none;
-  margin-left: 20px;
+  margin-top: 6px;
   font-size: 1rem;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
   &:hover {
     text-decoration: underline;

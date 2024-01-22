@@ -45,7 +45,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 
   return (
     <CardContainerWrapper>
-      <CardContainer>
+      <CardContainer data-testid="character-card-container">
         <CharacterImage src={imageUrl} alt={name} />
         <CharacterName>{name}</CharacterName>
       </CardContainer>

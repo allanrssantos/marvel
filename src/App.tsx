@@ -24,6 +24,7 @@ const App: React.FC = () => {
       <Tabs tabs={['Personagens', 'Quadrinhos', 'Criadores']} onChangeTab={handleTabChange} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/tabs" element={<CharacterList />} />
         <Route path="/personagens" element={<CharacterList />} />
         <Route path="/quadrinhos" element={<ComicList />} />
         <Route path="/criadores" element={<CreatorList />} />

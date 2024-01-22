@@ -46,7 +46,7 @@ const ComicCard: React.FC<ComicCardProps> = ({ comic }) => {
 
   return (
     <CardContainerWrapper>
-      <CardContainer>
+      <CardContainer data-testid="comic-card-container">
         <ComicImage src={imageUrl} alt={title} />
         <ComicTitle>{title}</ComicTitle>
       </CardContainer>

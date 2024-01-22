@@ -46,7 +46,7 @@ const CreatorCard: React.FC<CreatorCardProps> = ({ creator }) => {
 
   return (
     <CardContainerWrapper>
-      <CardContainer>
+      <CardContainer data-testid="creator-card-container">
         <CreatorImage src={imageUrl} alt={fullName} />
         <CreatorFullName>{fullName}</CreatorFullName>
       </CardContainer>
