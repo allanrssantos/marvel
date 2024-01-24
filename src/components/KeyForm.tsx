@@ -25,7 +25,7 @@ const KeyForm: React.FC = () => {
   const [cookies, setCookies] = useCookies(["public", "private"]);
 
   const handleClick = () => {
-    navigate('/tabs');
+    navigate('/personagens');
   };
 
   const isFormValid = keys.public !== "" && keys.private !== "";
@@ -56,6 +56,7 @@ const KeyForm: React.FC = () => {
       <FormContainer>
         <StyledForm onSubmit={handleSubmit}>
           <StyledInput
+            id="public" 
             type="text"
             name="public"
             value={keys.public}
@@ -64,6 +65,7 @@ const KeyForm: React.FC = () => {
             onChange={(e) => setKeys({ ...keys, public: e.target.value })}
           />
           <StyledInput
+            id="private"
             type="text"
             name="private"
             value={keys.private}

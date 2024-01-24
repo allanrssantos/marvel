@@ -5,7 +5,8 @@ import { useCookies } from "react-cookie";
 import img from "../styles/img/marvel-logo.png";
 
 const HeaderContainer = styled.div`
-  background-color: #007bff;
+  background-color: ${(props) => (props.theme.isDark ? "#333" : "#007bff")};
+  color: ${(props) => (props.theme.isDark ? "#fff" : "#000")};
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -64,7 +65,8 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const { pathname } = useLocation();
-  const [, , removeCookies] = useCookies(["public", "private"]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cookies, , removeCookies] = useCookies(["public", "private"]);
 
   const closeMobileMenu = useCallback(() => {
     setMobileMenuOpen(false);

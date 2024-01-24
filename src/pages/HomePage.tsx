@@ -3,10 +3,10 @@ import { StyledHomePage } from "../styles/HomePageStyles";
 import KeyForm from "../components/KeyForm";
 
 const HomePage: React.FC = () => {
-  return (    
+  return (
       <StyledHomePage>
         <KeyForm />
-      </StyledHomePage>    
+      </StyledHomePage>
   );
 };
 

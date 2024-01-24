@@ -21,12 +21,6 @@ const StyledLi = styled.li<TabProps>`
   }
 `;
 
-
-interface TabsProps {
-  tabs: string[];
-  onChangeTab: (tab: string) => void;
-}
-
 const TabsContainer = styled.div`
   ul {
     list-style: none;
@@ -38,6 +32,12 @@ const TabsContainer = styled.div`
     border-bottom: 1px solid #ddd;
   }
 `;
+
+interface TabsProps {
+  tabs: string[];
+  onChangeTab: (tab: string) => void;
+}
+
 
 const Tabs: React.FC<TabsProps> = ({ tabs, onChangeTab }) => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
